@@ -28,8 +28,10 @@
             "first_name": "Админ",
             "middle_name": "",
             "email": "admin@example.com",
-            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
-            "is_active": true
+            "password_hash": "pbkdf2_sha256$1200000$4PrGD3oMwyn8aZDWlg49J1$GMCQAV1Bi3v2ABgQ905aO6az2Ys4x/E7ixu3u1yjEfc=",
+            "is_active": true,
+            "created_at": "2026-03-25T10:00:00Z",
+            "updated_at": "2026-03-25T10:00:00Z"
         }
     },
     {
@@ -40,8 +42,10 @@
             "first_name": "Менеджер",
             "middle_name": "",
             "email": "manager@example.com",
-            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
-            "is_active": true
+            "password_hash": "pbkdf2_sha256$1200000$4PrGD3oMwyn8aZDWlg49J1$GMCQAV1Bi3v2ABgQ905aO6az2Ys4x/E7ixu3u1yjEfc=",
+            "is_active": true,
+            "created_at": "2026-03-25T10:00:00Z",
+            "updated_at": "2026-03-25T10:00:00Z"
         }
     },
     {
@@ -52,8 +56,10 @@
             "first_name": "Пользователь",
             "middle_name": "",
             "email": "user1@example.com",
-            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
-            "is_active": true
+            "password_hash": "pbkdf2_sha256$1200000$4PrGD3oMwyn8aZDWlg49J1$GMCQAV1Bi3v2ABgQ905aO6az2Ys4x/E7ixu3u1yjEfc=",
+            "is_active": true,
+            "created_at": "2026-03-25T10:00:00Z",
+            "updated_at": "2026-03-25T10:00:00Z"
         }
     },
     {
@@ -64,8 +70,10 @@
             "first_name": "Тест",
             "middle_name": "",
             "email": "user2@example.com",
-            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
-            "is_active": true
+            "password_hash": "pbkdf2_sha256$1200000$4PrGD3oMwyn8aZDWlg49J1$GMCQAV1Bi3v2ABgQ905aO6az2Ys4x/E7ixu3u1yjEfc=",
+            "is_active": true,
+            "created_at": "2026-03-25T10:00:00Z",
+            "updated_at": "2026-03-25T10:00:00Z"
         }
     },
     {
