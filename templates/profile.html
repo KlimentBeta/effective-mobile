@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>body { background: #f8f9fa; min-height: 100vh; }</style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-white shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{% url 'index' %}">Effective Mobile</a>
+            <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-sm">Выйти</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4">
+                    <h4 class="text-center mb-4">Редактировать профиль</h4>
+                    
+                    {% if error %}<div class="alert alert-danger py-2">{{ error }}</div>{% endif %}
+                    {% if success %}<div class="alert alert-success py-2">{{ success }}</div>{% endif %}
+                    
+                    <form method="POST" action="{% url 'profile' %}">
+                        {% csrf_token %}
+                        <div class="mb-2">
+                            <label class="small text-muted">Фамилия</label>
+                            <input type="text" name="last_name" class="form-control" value="{{ current_user.last_name }}" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="small text-muted">Имя</label>
+                            <input type="text" name="first_name" class="form-control" value="{{ current_user.first_name }}" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="small text-muted">Отчество</label>
+                            <input type="text" name="middle_name" class="form-control" value="{{ current_user.middle_name|default:'' }}">
+                        </div>
+                        <div class="mb-2">
+                            <label class="small text-muted">Email</label>
+                            <input type="email" name="email" class="form-control" value="{{ current_user.email }}" required>
+                        </div>
+                        
+                        <hr class="my-3">
+                        <h6 class="text-muted">Смена пароля <small class="fw-normal">(оставьте пустым, чтобы не менять)</small></h6>
+                        <div class="mb-2">
+                            <input type="password" name="new_password" class="form-control" placeholder="Новый пароль">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" name="new_password_confirm" class="form-control" placeholder="Повторите новый пароль">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100">Сохранить изменения</button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <a href="{% url 'index' %}" class="text-decoration-none">На главную</a>
+                    </div>
+
+                    <hr class="my-4">
+                    
+                    <div class="text-center">
+                        <h6 class="text-danger mb-2">Опасная зона</h6>
+                        <p class="small text-muted mb-3">Удаление аккаунта необратимо. Вы больше не сможете войти.</p>
+                        <button type="button" class="btn btn-outline-danger btn-sm" 
+                                data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            Удалить аккаунт
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-danger">Подтвердите удаление</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Вы уверены? Аккаунт будет деактивирован, а вы выйдете из системы.</p>
+                    <form method="POST" action="{% url 'delete-account' %}">
+                        {% csrf_token %}
+                        <input type="password" name="confirm_password" class="form-control mb-3" placeholder="Введите пароль для подтверждения" required>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger">Да, удалить аккаунт</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
