@@ -1,0 +1,103 @@
+[
+    {
+        "model": "core.role",
+        "pk": 1,
+        "fields": {
+            "name": "admin"
+        }
+    },
+    {
+        "model": "core.role",
+        "pk": 2,
+        "fields": {
+            "name": "manager"
+        }
+    },
+    {
+        "model": "core.role",
+        "pk": 3,
+        "fields": {
+            "name": "user"
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 1,
+        "fields": {
+            "last_name": "Админов",
+            "first_name": "Админ",
+            "middle_name": "",
+            "email": "admin@example.com",
+            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 2,
+        "fields": {
+            "last_name": "Менеджеров",
+            "first_name": "Менеджер",
+            "middle_name": "",
+            "email": "manager@example.com",
+            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 3,
+        "fields": {
+            "last_name": "Пользователей",
+            "first_name": "Пользователь",
+            "middle_name": "",
+            "email": "user1@example.com",
+            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 4,
+        "fields": {
+            "last_name": "Тестов",
+            "first_name": "Тест",
+            "middle_name": "",
+            "email": "user2@example.com",
+            "password_hash": "pbkdf2_sha256$600000$Qx8Kz9YvL2mNpR3t$8hK9mN2pL5qR7sT1vX4wZ6yB3cD5eF8gH0jK2mN4pQ=",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.userrole",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "role": 1
+        }
+    },
+    {
+        "model": "core.userrole",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "role": 2
+        }
+    },
+    {
+        "model": "core.userrole",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "role": 3
+        }
+    },
+    {
+        "model": "core.userrole",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "role": 3
+        }
+    }
+]

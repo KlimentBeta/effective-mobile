@@ -43,3 +43,38 @@ class User(models.Model):
     
     def is_superuser(self):
         return False
+    
+class Role(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField("Название роли", max_length=50, unique=True)
+    
+    class Meta:
+        db_table = 'roles'
+
+    def __str__(self):
+        return self.name
+
+class UserRole(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_roles')
+    role = models.ForeignKey(Role, on_delete=models.CASCADE)
+    
+    class Meta:
+        db_table = 'user_roles'
+        unique_together = ['user', 'role']
+
+    def __str__(self):
+        return f"{self.user.email} - {self.role.name}"
+    
+class Post(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField("Название", max_length=100)
+    description = models.TextField("Описание", max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        db_table = 'posts'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title

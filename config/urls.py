@@ -10,4 +10,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'), 
     path('profile/', views.profile_view, name='profile'), 
     path('profile/delete/', views.delete_account_view, name='delete-account'),
+    path('admin-panel/', views.admin_panel, name='admin-panel'),
+    path('posts/<int:post_id>/edit/', views.edit_post, name='edit-post'),
 ]
